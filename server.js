@@ -5,15 +5,22 @@ const config = require('config');
 
 const app = express();
 
+/* Enables CORS */
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 const db = config.get('mongoURI');
 
-/* Connect to DB */
+/* Connects to DB */
 mongoose
   .connect(db, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
   .then(() => console.log('MongoDB is connected'))
   .catch(err => console.log(err));
 
-/* Get Mongoose schema */
+/* Gets Mongoose schema */
 const Doggo = require('./models/Doggo');
 
 /* RESTful API METHODS */
