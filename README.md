@@ -6,4 +6,4 @@ To see how it works, clone this repository and start the server by running serve
 
 The server will start on port [5000](http://localhost:5000/)
 
-**NOTE**: The Mongoose schema set for the DB represents dog breeds (sorry, I love dogs :dog:)
+**NOTE**: The Mongoose schema set for the DB represents dog breeds (sorry, I love dogs :sparkles:)
